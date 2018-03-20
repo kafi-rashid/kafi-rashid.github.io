@@ -1,7 +1,7 @@
 jQuery(document).ready(function(){
 	$.ajax({
 	    type: "GET",
-	    url: "https://api.github.com/users/kafi-rashid/repos?access_token=ed8cd7b35b09f5909ffdacd92ef2f415da2893c2",
+	    url: "https://api.github.com/users/kafi-rashid/repos",
 	    dataType: "json",
 	    success: function(result) {
 	        for(i in result) {
@@ -29,6 +29,6 @@ jQuery(document).ready(function(){
 	                'opacity': Math.random() * 1 - (1 * 0.1)
 	            }, 500);
 	        }
-		}, 750)
+		}, 1000)
 	});
 });
