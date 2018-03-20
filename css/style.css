@@ -104,10 +104,10 @@ body {
 	padding-top: 10px;
 }
 #hub a {
+	color: rgba(255, 255, 255, 0.3);
 	text-decoration: none;
 	font-size: 12px;
 	margin-bottom: 10px;
-	/*display: block;*/
 	transition: 0.3s;
 }
 #hub a:hover, #hub a:focus {
@@ -132,6 +132,13 @@ body {
 #info .credit a:hover > img {
 	filter: invert(100%);
 }
+.tooltip-inner {
+	padding: 8px 10px;
+}
+.tooltip, .tooltip * {
+	font-size: 12px;
+	letter-spacing: 1px;
+} 
 
 @media (max-width: 1000px) {
     #sky {
