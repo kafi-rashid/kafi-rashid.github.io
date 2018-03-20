@@ -6,14 +6,14 @@ $(document).ready(function(){
 	    success: function(result) {
 	        for(i in result) {
 	        	if (result[i].default_branch == "gh-pages") {
-	            	$('#git').append("<p><a class='tips' href='https://kafi-rashid.github.io/"+ result[i].name +"' target='_blank' data-toggle='tooltip' data-placement='left' title='" + result[i].description + "'>" + result[i].name + "</a></p>");
+	            	$('#git').append("<p><a class='tips' href='https://kafi-rashid.github.io/"+ result[i].name +"' data-toggle='tooltip' data-placement='left' title='" + result[i].description + "'>" + result[i].name + "</a></p>");
 					$('[data-toggle="tooltip"]').tooltip(); 
 	            }
 	            else if (result[i].name == "kafi-rashid.github.io") {
 	            	
 	            }
 	            else {
-	            	$('#git-2').append("<p><a class='tips' href='" + result[i].svn_url + "' target='_blank' data-toggle='tooltip' data-placement='left' title='" + result[i].description + "'>" + result[i].name + "</a></p>");
+	            	$('#git-2').append("<p><a class='tips' href='" + result[i].svn_url + "' data-toggle='tooltip' data-placement='left' title='" + result[i].description + "'>" + result[i].name + "</a></p>");
 	            }
 	        }
 	    }
