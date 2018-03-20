@@ -1,0 +1,141 @@
+/*
+	StarNight
+	Owner: kafi.rashid@gmail.com
+*/
+
+* {
+	box-sizing: border-box;
+	vertical-align: top;
+	font-family: 'Raleway', sans-serif;
+	color: rgba(255, 255, 255, 0.3);
+	font-weight: 100;
+	letter-spacing: 2px;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #222222;
+}
+#sky {
+	height: 100%;
+	width: calc(100% - 250px);
+	background-image: url('../images/sky.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	display: inline-block;
+}
+#stars {
+	overflow: hidden;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	height: 95%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.star {
+	height: 2px;
+	width: 2px;
+	border-radius: 50%;
+	position: absolute;
+	background-color: #a1a1ad;
+	transition: 0.3s;
+	opacity: 0;
+}
+#info {
+	position: relative;
+	float: right;
+	width: 250px;
+	padding: 40px;
+	height: 100%;
+	display: inline-block;
+	text-transform: uppercase;
+	text-align: right;
+	line-height: 1
+}
+#info strong {
+	font-weight: 700;
+	font-size: 50px;
+	letter-spacing: -1px;
+	padding-right: 1px;
+}
+#info .title, #info .credit {
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+}
+#info .title {
+	font-size: 26px;
+}
+#hub {
+	padding: 40px 0 60px 0;
+}
+#hub p {
+	letter-spacing: 3px;
+	font-weight: 700;
+	font-size: 13px;
+	margin: 15px 0;
+}
+#git p {
+	display: block;
+	margin: 0;
+	padding: 3px 0;
+}
+#git p:after {
+	content: ' ·';
+}
+#git-2 p {
+	display: block;
+	margin: 0;
+	padding: 3px 0;
+}
+#git-2 p:after {
+	content: ' ·';
+}
+.repo {
+	padding-top: 10px;
+}
+#hub a {
+	text-decoration: none;
+	font-size: 12px;
+	margin-bottom: 10px;
+	/*display: block;*/
+	transition: 0.3s;
+}
+#hub a:hover, #hub a:focus {
+	color: white;
+}
+#info .credit {
+	letter-spacing: 1px;
+	font-size: 10px;
+	position: absolute;
+	bottom: 40px;
+	right: 40px; 
+}
+#info .credit a {
+	text-decoration: none;
+}
+#info .credit img {
+	width: 18px;
+	margin-left: 5px;
+	filter: invert(40%);
+	transition: 0.3s;
+}
+#info .credit a:hover > img {
+	filter: invert(100%);
+}
+
+@media (max-width: 1000px) {
+    #sky {
+        width: 100%;
+        display: block;
+    }
+}
