@@ -8,6 +8,9 @@ jQuery(document).ready(function(){
 	        	if (result[i].default_branch == "gh-pages") {
 	            	$('#git').append("<p><a href='https://kafi-rashid.github.io/"+ result[i].name +"' target='_blank'>" + result[i].name + "</a></p>");
 	            }
+	            else if (result[i].name == "kafi-rashid.github.io") {
+	            	
+	            }
 	            else {
 	            	$('#git-2').append("<p><a href='" + result[i].svn_url + "' target='_blank'>" + result[i].name + "</a></p>");
 	            }
