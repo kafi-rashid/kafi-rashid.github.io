@@ -86,7 +86,8 @@ body {
 	padding: 3px 0;
 }
 #pages p:after, #repos p:after {
-	content: ' ·';
+	content: ' •';
+	color: #858585;
 }
 #hub a {
 	color: #858585;
