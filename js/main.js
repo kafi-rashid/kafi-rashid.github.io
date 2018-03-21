@@ -1,1 +1,46 @@
-$(document).ready(function(){$.ajax({type:"GET",url:"https://api.github.com/users/kafi-rashid/repos",dataType:"json",success:function(t){for(i in t)"gh-pages"==t[i].default_branch?($("#pages").append("<p><a class='tips' href='https://kafi-rashid.github.io/"+t[i].name+"' data-toggle='tooltip' data-placement='left' title='"+t[i].description+"'>"+t[i].name+"</a></p>"),$('[data-toggle="tooltip"]').tooltip()):"kafi-rashid.github.io"==t[i].name||$("#repos").append("<p><a class='tips' href='"+t[i].svn_url+"' data-toggle='tooltip' data-placement='left' title='"+t[i].description+"'>"+t[i].name+"</a></p>")}}),$(document).click(function(t){$("#stars").prepend("<div class='star' style='left: "+t.pageX+"px; top: "+t.pageY+"px; opacity: 1'></div>")}),$("#sky").append('<div id="stars"></div>'),$(window).on("load resize",function(t){var a=$("#stars");$(".star").remove();for(var e=a.width(),i=a.height(),o=0;o<e*i/4e3;o++)a.append("<div class='star' style='left: "+Math.floor(Math.random()*e+1)+"px; top: "+Math.floor(Math.random()*i+1)+"px'></div>");setInterval(function(){for(var t=0;t<e*i/4e3;t++)$(".star:nth-of-type("+Math.floor(1*Math.random())+t+")").animate({opacity:1*Math.random()-.1},500)},1e3)}),$('[data-toggle="tooltip"]').tooltip()});
+$(document).ready(function(){
+	$.ajax({
+	    type: "GET",
+	    url: "https://api.github.com/users/kafi-rashid/repos",
+	    dataType: "json",
+	    success: function(result) {
+	        for(i in result) {
+	        	if (result[i].default_branch == "gh-pages") {
+	            	$('#pages').append("<p><a class='tips' href='https://kafi-rashid.github.io/"+ result[i].name +"' data-toggle='tooltip' data-placement='left' title='" + result[i].description + "'>" + result[i].name + "</a></p>");
+					$('[data-toggle="tooltip"]').tooltip(); 
+	            }
+	            else if (result[i].name == "kafi-rashid.github.io") {
+	            	
+	            }
+	            else {
+	            	$('#repos').append("<p><a class='tips' href='" + result[i].svn_url + "' data-toggle='tooltip' data-placement='left' title='" + result[i].description + "'>" + result[i].name + "</a></p>");
+	            }
+	        }
+	    },
+	    error: function() {
+            $('#pages').append("API rate limit exceeded");
+            $('#repos').append("API rate limit exceeded");
+	    }
+	});
+	$(document).click(function(e) {
+		$('#stars').prepend("<div class='star' style='left: "+e.pageX+"px; top: "+e.pageY+"px; opacity: 1'></div>");
+	});
+	$('#sky').append('<div id="stars"></div>');
+	$(window).on("load resize", function(e) {
+		var stars = $('#stars');
+		$('.star').remove();
+		var vp_w = stars.width();
+		var vp_h = stars.height();
+		for (var i = 0; i < ((vp_w * vp_h) / 4000); i++) {
+			stars.append("<div class='star' style='left: "+Math.floor((Math.random() * vp_w) + 1)+"px; top: "+Math.floor((Math.random() * vp_h) + 1)+"px'></div>");
+		}
+		setInterval(function() {
+			for(var i = 0; i < ((vp_w * vp_h) / 4000); i++) {
+	            $('.star:nth-of-type('+Math.floor(Math.random() * 1) + i+')').animate({
+	                'opacity': Math.random() * 1 - (1 * 0.1)
+	            }, 500);
+	        }
+		}, 1000);
+	});
+	$('[data-toggle="tooltip"]').tooltip(); 
+});
