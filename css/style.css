@@ -58,11 +58,11 @@ body {
 #info strong {
 	font-weight: 700;
 	font-size: 50px;
-	letter-spacing: -1px;
+	letter-spacing: -1.3px;
 	padding-right: 1px;
 }
-#info .title, #info .credit {
-	line-height: 1;
+#info .title, .credit {
+	line-height: 0.8;
 	padding: 0;
 	margin: 0;
 }
@@ -70,7 +70,7 @@ body {
 	font-size: 26px;
 }
 #hub {
-	padding: 40px 0 60px 0;
+	padding: 30px 0;
 }
 #hub p {
 	letter-spacing: 3px;
@@ -107,23 +107,24 @@ body {
 #hub a:hover, #hub a:focus {
 	color: white;
 }
-#info .credit {
+.credit {
 	letter-spacing: 1px;
 	font-size: 10px;
 	position: absolute;
 	bottom: 40px;
 	right: 40px; 
+	z-index: 3;
 }
-#info .credit a {
+.credit a {
 	text-decoration: none;
 }
-#info .credit img {
+.credit img {
 	width: 18px;
 	margin-left: 5px;
 	filter: invert(40%);
 	transition: 0.3s;
 }
-#info .credit a:hover > img {
+.credit a:hover > img {
 	filter: invert(100%);
 }
 .tooltip-inner {
@@ -132,4 +133,12 @@ body {
 .tooltip, .tooltip * {
 	font-size: 12px;
 	letter-spacing: 1px;
-} 
+}
+
+
+@media (max-height: 470px) {
+	.credit {
+		left: 35px;
+		top: 35px;
+	}
+}
