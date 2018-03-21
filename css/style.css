@@ -7,7 +7,7 @@
 	box-sizing: border-box;
 	vertical-align: top;
 	font-family: 'Raleway', sans-serif;
-	color: rgba(255, 255, 255, 0.3);
+	color: #656565;
 	font-weight: 100;
 	letter-spacing: 2px;
 }
@@ -22,19 +22,12 @@ body {
 }
 #sky {
 	height: 100%;
-	width: calc(100% - 250px);
-	background-image: url('../images/sky.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	width: 100%;
 	position: relative;
-	display: inline-block;
 }
 #stars {
 	overflow: hidden;
-	border-bottom-right-radius: 50%;
-	border-bottom-left-radius: 50%;
-	height: 95%;
+	height: 100%;
 	width: 100%;
 	position: absolute;
 	top: 0;
@@ -51,15 +44,16 @@ body {
 	opacity: 0;
 }
 #info {
-	position: relative;
-	float: right;
 	width: 250px;
 	padding: 40px;
 	height: 100%;
-	display: inline-block;
 	text-transform: uppercase;
 	text-align: right;
-	line-height: 1
+	line-height: 1;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 3;
 }
 #info strong {
 	font-weight: 700;
@@ -104,7 +98,7 @@ body {
 	padding-top: 10px;
 }
 #hub a {
-	color: rgba(255, 255, 255, 0.3);
+	color: #858585;
 	text-decoration: none;
 	font-size: 12px;
 	margin-bottom: 10px;
@@ -139,10 +133,3 @@ body {
 	font-size: 12px;
 	letter-spacing: 1px;
 } 
-
-@media (max-width: 1000px) {
-    #sky {
-        width: 100%;
-        display: block;
-    }
-}
