@@ -58,7 +58,7 @@ body {
 }
 #info strong {
 	font-weight: 700;
-	font-size: 50px;
+	font-size: 40px;
 	letter-spacing: -1.3px;
 	padding-right: 1px;
 }
@@ -66,16 +66,16 @@ body {
 	line-height: 0.8;
 	padding: 0;
 	margin: 0;
-	font-size: 26px;
+	font-size: 20px;
 }
 #hub {
-	padding: 30px 0;
+	padding: 20px 0;
 }
 #hub .page, #hub .repo {
 	letter-spacing: 3px;
 	font-weight: 700;
-	font-size: 13px;
-	margin: 15px 0;
+	font-size: 11px;
+	margin: 10px 0;
 }
 .repo {
 	padding-top: 10px;
@@ -83,7 +83,7 @@ body {
 #pages p, #repos p {
 	display: block;
 	margin: 0;
-	padding: 3px 0;
+	padding: 2px 0;
 }
 #pages p:after, #repos p:after {
 	content: ' •';
@@ -92,8 +92,7 @@ body {
 #hub a {
 	color: #858585;
 	text-decoration: none;
-	font-size: 12px;
-	margin-bottom: 10px;
+	font-size: 11px;
 	transition: 0.3s;
 }
 #hub a:hover, #hub a:focus {
@@ -101,8 +100,8 @@ body {
 }
 .social {
 	position: absolute;
-	bottom: 40px;
-	right: 40px; 
+	bottom: 30px;
+	right: 35px;
 	z-index: 3;
 }
 .social a {
