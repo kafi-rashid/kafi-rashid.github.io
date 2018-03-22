@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$.ajax({
 	    type: "GET",
-	    url: "https://api.github.com/users/kafi-rashid/repos",
+	    url: "https://api.github.com/users/kafi-rashid/repos?per_page=100",
 	    dataType: "json",
 	    success: function(result) {
 	        for(i in result) {
@@ -13,8 +13,10 @@ $(document).ready(function(){
 	            else $('#repos').append("<p><a class='tips' href='" + result[i].svn_url + "' data-toggle='tooltip' data-placement='left' title='" + result[i].description + "'>" + result[i].name + "</a></p>");
 	        }
 	    },
-	    error: function() {
-            $('#pages, #repos').append("API rate limit exceeded");
+	    error: function(result) {
+	    	for(i in result) {
+	            $('#pages, #repos').append(result[i].message);
+	        }
 	    }
 	});
 	$('#sky').append('<div id="stars"></div>');
