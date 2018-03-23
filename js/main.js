@@ -1,23 +1,20 @@
-$(document).ready(function() {
+$(window).on("load resize", function(e) {
 	var stars = $('#sky');
-	function joljol() {
-		$('.star').remove();
-		for (var i = 0; i < ((stars.width() * stars.height()) / 4000); i++) {
-			stars.append("<div class='star' style='left: " + Math.floor((Math.random() * stars.width()) + 1) + "px; top: " + Math.floor((Math.random() * stars.height()) + 1) + "px'></div>");
-		}
+	$('.star').remove();
+	for (var i = 0; i < ((stars.width() * stars.height()) / 4000); i++) {
+		stars.append("<div class='star' style='left: " + Math.floor((Math.random() * stars.width()) + 1) + "px; top: " + Math.floor((Math.random() * stars.height()) + 1) + "px'></div>");
 	}
-	$(window).on("load resize", function(e) {
-		joljol();
-		setInterval(function() {
-			for(var i = 0; i < ((stars.width() * stars.height()) / 4000); i++) {
-	            $('.star:nth-of-type(' + Math.floor(Math.random() * 1) + i + ')').animate({
-	                'opacity': Math.random() * 1 - (1 * 0.1)
-	            }, 500);
-	        }
-		}, 1000);
-	});
+	setInterval(function() {
+		for(var i = 0; i < ((stars.width() * stars.height()) / 4000); i++) {
+            $('.star:nth-of-type(' + Math.floor(Math.random() * 1) + i + ')').animate({
+                'opacity': Math.random() * 1 - (1 * 0.1)
+            }, 500);
+        }
+	}, 1000);
+});
+$(document).ready(function() {
 	$(document).click(function(e) {
-		stars.prepend("<div class='star' style='left: " + e.pageX + "px; top: " + e.pageY + "px; opacity: 1'></div>");
+		$('#sky').prepend("<div class='star' style='left: " + e.pageX + "px; top: " + e.pageY + "px; opacity: 1'></div>");
 	});
 	$.ajax({
 	    type: "GET",
